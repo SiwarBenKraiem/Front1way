@@ -1,0 +1,103 @@
+
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th *ngIf=" !isUser" scope="col">Description</th>
+                  <th *ngIf=" isUser" scope="col">Email</th>
+                  <th scope="col">Action</th>
+                  <th scope="col"*ngIf="btnhidden">sous-groupe</th>
+                  
+                 
+                 
+                </tr>
+              </thead>
+              <tbody  >
+               
+                <tr  cdkDropList  *ngFor="let l of listeD" 
+                (cdkDropListDropped)="drop($event)"
+                >
+                  
+                 
+                 
+                  <td *ngIf="l.id_grp_p !=null && l.id_grp_p_p ==null && isUser==false "   cdkDrag >
+                    <span class="badge badge-dot mr-4">
+                      <i class="bg-warning" ></i>
+                       {{l.nom}}
+                    </span>
+                   
+                  </td>
+                  <td *ngIf="isUser ">
+                    <span class="badge badge-dot mr-4">
+                      {{l.nom}}
+                    </span>
+                    
+                  </td>
+  
+                 
+                  
+                  
+                  <td *ngIf="l.id_grp_p !=null  && l.id_grp_p_p ==null && isUser==false  ">
+                    <span class="badge badge-dot mr-4">
+                      {{l.description}}
+                    </span>
+                    
+                  </td>
+                  <td *ngIf="isUser ">
+                    <span class="badge badge-dot mr-4">
+                      {{l.email}}
+                    </span>
+                    
+                  </td>
+  
+                 
+                 
+  
+                  <td *ngIf="l.id_grp_p !=null && l.id_grp_p_p ==null && isUser==false  ">
+                  
+                    <button type="button"  (click)="deleteG(l)"  name="btn" style="background-color:transparent;border: transparent;">
+                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="far fa-trash-alt"></i>  
+                    </div>
+                    
+                    </button>
+                    <button *ngIf="isUser==false" type="button" (click)="opendialog(l.id)"  name="btn" style="background-color:transparent;border: transparent;">
+                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-boxes"></i>
+                      </div>
+                      
+                      </button>
+                      <button *ngIf="isUser==false" type="button" [routerLink]="['/affectation', l.id]" value="l.id" name="btn" style="background-color:transparent;border: transparent;">
+                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                          <i class="fas fa-plus"></i>
+                        </div>
+                      </button>
+                      <button *ngIf="!isUser" type="button" (click)="number(l.id)" value="l.id" name="btn" style="background-color:transparent;border: transparent;">
+                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                          <i class="fas fa-street-view"></i>
+                        </div>
+                      </button>
+                        
+                    
+                     
+                 
+                  </td>
+                 <td *ngIf="isUser">
+                  <mat-icon  title="prolonger la session pour cet apprenant" (click)="prolongerApprenant(l.id)" >av_timer</mat-icon>
+
+                 </td>
+                  
+                  
+                  
+                 
+                  
+           
+                 
+                  
+               
+                     
+                </tr>
+          
+               </tbody>
+              </table>
+           

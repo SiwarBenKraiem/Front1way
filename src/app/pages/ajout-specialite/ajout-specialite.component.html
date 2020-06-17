@@ -1,0 +1,51 @@
+
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  
+
+
+
+<div class="container-fluid mt--7" style="float:left;">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Ajouter Specialité </h3>
+            </div>
+          </div>
+        </div>
+      <div class="card-body">
+          <form [formGroup]="addSpecialiteform" (ngSubmit)="addSpecialite()">
+           
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <input class="form-control" placeholder="Nom" type="text" formControlName="nom">
+              </div>
+            </div>
+           
+            
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary mt-4">Ajouter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            </div> 
+
+
+         
+        

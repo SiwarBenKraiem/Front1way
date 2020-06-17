@@ -1,0 +1,51 @@
+
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col"></th>
+                    <th scope="col">Action</th>
+                    <th scope="col"></th>
+                    
+                    
+                   
+                   
+                  </tr>
+                </thead>
+                <tbody  >
+                 
+                  <tr  cdkDropList  *ngFor="let l of listeD" >
+                    
+                   
+                   
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning" ></i>
+                         {{l.nom_module}}
+                      </span>
+                     
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                    
+                      
+                       
+                        <button title="affecter module " type="button" (click)="affecter(l.id)" value="l.id" name="btn" style="background-color:transparent;border: transparent;">
+                          <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        </button>
+                         
+                   
+                    </td>
+                    <td>
+
+                    </td>
+               
+                  </tr>
+            
+                 </tbody>
+                </table>
+             

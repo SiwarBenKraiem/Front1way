@@ -1,0 +1,152 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                 
+                    <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/tables']"> Utilisateur</a></span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                      <i class="fas fa-users"></i>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+  
+                    <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/tables-grp']">Groupe</a></span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                      <i class="fas fa-users"></i>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+  
+                    <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/tables-domaine']"> Domaine</a></span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                      <i class="fas fa-users"></i>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                   
+                    <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/tables-spec']"> Spécialité</a></span>
+                  </div>
+                  <div class="col-auto">
+                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                      <i class="fas fa-percent"></i>
+                    </div>
+                  </div>
+                </div>
+     
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">Apprenant de la plateforme </h3>
+          </div>
+          <div class="table-responsive">
+            
+                  <input class="form-control" placeholder="Search" type="text"
+                 [(ngModel)]="searchText" (blur)="chercherUser(searchText)" >
+                
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Prénom</th>
+                  <th scope="col">Email</th>
+                 
+                  <th scope="col">Action</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let list of liste">
+                 
+                 
+                  <td *ngIf="list.Role==3">
+                    <span class="badge badge-dot mr-4">
+                      <i class="bg-warning" ></i>
+                       {{list.nom}}
+                    </span>
+                   
+                  </td>
+  
+                 
+                  
+                  
+                  <td  *ngIf="list.Role==3">
+                    <span class="badge badge-dot mr-4">
+                      {{list.prenom}}
+                    </span>
+                    
+                  </td>
+  
+                  <td  *ngIf="list.Role==3">
+                    <span class="badge badge-dot mr-4">
+                      {{list.email}}
+                    </span>
+                   
+                  </td>
+                 
+  
+                  <td *ngIf="list.Role==3">
+                  
+                    <button type="button" (click)="add(list.id)" value="list.nom" name="btn" style="background-color:transparent;border: transparent;">
+                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    </button>
+                   
+                 
+                  </td>
+  
+                  
+                </tr>
+               
+  

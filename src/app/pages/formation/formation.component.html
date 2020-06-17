@@ -1,0 +1,70 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0"> Formation</h3>
+        </div>
+        <div class="table-responsive">
+          
+                <input class="form-control" placeholder="Search" type="text"
+               [(ngModel)]="searchText" (blur)="chercherUser(searchText)" >
+              
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nom formation</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+               
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let list of liste" >
+               
+               
+                <td > 
+                  <span class="badge badge-dot mr-4">
+                    <i class="bg-warning" ></i>
+                     {{list.nom}}
+                  </span>
+                 
+                </td>
+                
+
+               
+                <td > 
+                  <span class="badge badge-dot mr-4">
+                    <i class="bg-warning" ></i>
+                    {{list.description}}
+                     
+                  </span>
+                 
+                </td>
+
+               
+               
+
+                <td>
+                
+                  <button type="button" (click)="Affecter(index)" style="background-color:transparent;border: transparent;">
+                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-plus"></i></div>
+                  </button>
+                 
+               
+                </td>
+
+                
+              </tr>
+              </tbody>
+              </table>
+              </div>
+              </div></div>
+              </div>

@@ -1,0 +1,226 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@SiwarBenKraiem 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+gramiamal
+/
+1wayFront
+Private
+0
+00
+ Code
+ Issues 0
+ Pull requests 0 Actions
+ Projects 0
+ Security 0
+ Insights
+1wayFront/src/app/pages/user-profile/user-profile.component.html
+@gramiamal gramiamal *okii
+93b18aa on 1 Apr
+195 lines (168 sloc)  7.64 KB
+  
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row">
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+               
+                  <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/user-profile']"> Utilisateur</a></span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+
+                  <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/ajout-groupe']">Groupe</a></span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+
+                  <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/ajout-domaine']"> Domaine</a></span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                 
+                  <span class="h2 font-weight-bold mb-0"> <a routerLinkActive="active" [routerLink]="['/ajout-specialite']"> Spécialité</a></span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                    <i class="fas fa-percent"></i>
+                  </div>
+                </div>
+              </div>
+   
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      
+    </div>
+    
+    <div class="col-xl-8 order-xl-1">
+      
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Ajouter Utilisateur</h3>
+            </div>
+          </div>
+        </div>
+        
+      <div class="card-body">
+        
+          <form [formGroup]="adduserform" (ngSubmit)="adduser()">
+           
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <input class="form-control" placeholder="Nom" type="text" formControlName="nom">
+              </div>
+            </div><div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <input class="form-control" placeholder="prenom" type="text" formControlName="prenom" >
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <input class="form-control" placeholder="Email" type="email" formControlName="email" >
+              </div>
+            </div>
+          
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Rôle</label>
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="Role" >
+                <option value="1">Adminstrateur</option>
+                <option value="2">Animateur</option>
+                <option value="3">Apprenants</option>
+            
+              </select>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input class="form-control" placeholder="Password" type="password" formControlName="password" >
+              </div>
+            </div>
+            <div *ngIf="adduserform.value.Role==3">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3" >
+              <label for="exampleFormControlSelect1">Domaine</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="code_domaine" formControlName="code_domaine" >
+                <option></option>
+                <option *ngFor="let list of listeD" >{{list.nom_domaine}}</option>
+              
+          
+            </select>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3">
+            <label for="exampleFormControlSelect1">Spécialité</label>
+            <select class="form-control" id="exampleFormControlSelect1"  name="code_specialite" formControlName="code_specialite" >
+            <option></option>
+              <option *ngFor="let list of listeS" >{{list.nom_specialite}}</option>
+           
+        
+          </select>
+        </div>
+           <div >
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="suppression" Unchecked  formControlName="suppression">
+              <label class="form-check-label" for="exampleCheck1" >Suppression automatique</label>
+            </div>
+            <div class="form-check">
+              
+              <input type="date" data-provide="datepicker" class="form-check-input" name="suppression"   formControlName="dateSuppression">
+
+            </div>
+            </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" [disabled]="adduserform.invalid || btndisabled" class="btn btn-primary mt-4">Ajouter</button>
+            </div>
+          </form>
+          
+        </div>
+        <div class="card-body">
+          <form   [formGroup]="adduserformExcel" (ngSubmit)="import()" enctype="multipart/form-data">
+            
+              <input type="file" (change)="onSelectedFile($event)" name="file" class="form-control" formControlName="fileE">
+              <br>
+              <button  type="submit" [disabled]="adduserformExcel.invalid || btn2disabled" class="btn btn-success">Import User Data</button>
+             
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+

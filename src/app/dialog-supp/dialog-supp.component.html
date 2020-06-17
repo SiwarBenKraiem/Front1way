@@ -1,0 +1,8 @@
+<p>vous etes entarin de supprimer :</p>
+<h1>{{data.list.nom}}</h1>
+<h1>{{data.list.nom_domaine}}</h1>
+<h1>{{data.list.nom_specialite}}</h1>
+<div>
+<button type="button" class="btn btn-danger" (click)="deleteG(data.list.id)"  name="btn" style="margin-left:250px;">supprime</button>
+ <button type="button"  (click)="annuler()"class="btn btn-light"  name="btn" style="float: right;">Annuler</button>
+</div>

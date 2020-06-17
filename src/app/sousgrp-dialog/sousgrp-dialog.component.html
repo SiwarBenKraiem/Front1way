@@ -1,0 +1,81 @@
+
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                    <th scope="col"*ngIf="btnhidden">sous-groupe</th>
+                   
+                   
+                   
+                  </tr>
+                </thead>
+                <tbody  >
+                 
+                  <tr  cdkDropList  *ngFor="let l of data.list" 
+                  (cdkDropListDropped)="drop($event)"
+                  >
+                    
+                   
+                   
+                    <td   cdkDrag >
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning" ></i>
+                         {{l.nom}}
+                      </span>
+                     
+                    </td>
+    
+                   
+                    
+                    
+                    <td >
+                      <span class="badge badge-dot mr-4">
+                        {{l.description}}
+                      </span>
+                      
+                    </td>
+    
+                   
+                   
+    
+                    <td>
+                    
+                      <button type="button"  (click)="deleteG(l)"  name="btn" style="background-color:transparent;border: transparent;">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                          <i class="far fa-trash-alt"></i>  
+                      </div>
+                      
+                      </button>
+                     
+                        <button type="button" [routerLink]="['/affectation', l.id]" value="l.id" name="btn" style="background-color:transparent;border: transparent;">
+                          <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        </button>
+                        <button type="button" (click)="number(l.id)" value="l.id" name="btn" style="background-color:transparent;border: transparent;">
+                          <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                            <i class="fas fa-street-view"></i>
+                          </div>
+                        </button>
+                          
+                     
+                   
+                    </td>
+                   
+                    
+                    
+                    
+                   
+                   
+             
+                   
+                    
+                 
+                       
+                  </tr>
+            
+                 </tbody>
+                </table>
+             

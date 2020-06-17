@@ -1,0 +1,77 @@
+
+
+  <div class="row" style="width: 99.4%; padding-left:3.5% ;">
+
+      <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+    
+      </div>
+      <div class="col-xl-8 order-xl-1" >
+          <div class="card bg-secondary shadow">
+
+             
+              <div class="card-body" >
+
+        
+<form [formGroup]="div" (change)="onchange()"  
+ cdkDropList (cdkDropListDropped)="drop()">
+  <div class="form-group">
+    <div class="input-group input-group-alternative mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+      </div>
+      <input class="form-control"  placeholder="Nom contenu"  type="text" formControlName="nom_content"> 
+    </div>
+  </div>
+ 
+    <div class="form-group">
+      <div class="input-group input-group-alternative mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+        </div>
+        <select formControlName="type_content">
+         
+          <option value="file">fichier</option>
+          <option value="texte">texte</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group" (change)="onchange()" *ngIf="div.value.type_content=='file'">
+      <div class="input-group input-group-alternative mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+        </div>
+        <input type="file"  formControlName="conten" >
+        
+      </div>
+    </div>
+    
+    <div class="form-group"  *ngIf="div.value.type_content=='texte'" >
+      <div class="input-group input-group-alternative mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+        </div>
+        <editor  (change)="onchange()" apiKey="l4xez3d8fi0pvkfe35n06blfbvcd3bnvixlf58qotdt7d6rr"  formControlName="conten" ></editor> 
+        
+      </div>
+    </div>
+     
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+   
+    
+    
+
+      
+            
+      
+    
+     
+
+         
+          
+    
+
+
