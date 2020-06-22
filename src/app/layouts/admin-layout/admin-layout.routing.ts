@@ -21,6 +21,7 @@ import { ChangePasswordComponent } from 'src/app/pages/change-password/change-pa
 import { ModuleComponent } from 'src/app/pages/module/module.component';
 import { DivcontenuComponent } from 'src/app/pages/divcontenu/divcontenu.component';
 import { ListeModuleComponent } from 'src/app/pages/liste-module/liste-module.component';
+import { ResponsePasswordComponent } from 'src/app/pages/response-password/response-password.component';
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -43,4 +44,6 @@ export const AdminLayoutRoutes: Routes = [
     {path:'div',component:DivcontenuComponent},
    // {path:'addmodule',component:AjoutModuleComponent},
     {path:'tables-module',component:ListeModuleComponent},
+    {path:'response-password',component:ResponsePasswordComponent},
+    
 ];

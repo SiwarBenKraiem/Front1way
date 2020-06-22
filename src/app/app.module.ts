@@ -32,6 +32,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { DialogQuestionnaireComponent } from './dialog-questionnaire/dialog-questionnaire.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { ResponsePasswordComponent } from './pages/response-password/response-password.component';
 //import { CKEditorModule } from 'ckeditor4-angular';
 
 
@@ -75,6 +76,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
     ResetPasswordComponent,
     DialogQuestionnaireComponent,
     ChangePasswordComponent,
+    ResponsePasswordComponent,
    
     
   

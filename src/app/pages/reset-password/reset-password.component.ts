@@ -22,11 +22,11 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit(){
   }
-  reset(){
+reset(){
 
     let user=this.ResetGrp.value;
    this.us.forgot(user).subscribe((res)=>{
-     console.log(res);
+     
     this.toastrService.success("","test");
   },
   error=>{

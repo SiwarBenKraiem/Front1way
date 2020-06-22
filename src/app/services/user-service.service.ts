@@ -57,11 +57,17 @@ export class UserServiceService {
     return this.http.get<any>(this.apiprefix +"logout",httpOptions);
   }
   
-  forgot(mail: String )
+  forgot(user )
   {
-    return this.http.post<any>(this.apiprefix+"password/create",{
-      "email":mail
-    });
+    return this.http.post<any>(this.apiprefix+"resett",user);
+      
+   
+  }
+  changer(user){
+    return this.http.post<any>(this.apiprefix+"forgot",user);
+  }
+  consulter(id){
+    return this.http.get<any>(this.apiprefix+"Consulter",id);
   }
   
 
