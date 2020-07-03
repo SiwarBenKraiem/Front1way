@@ -34,7 +34,15 @@ export class LoginComponent implements OnInit {
       this.ngOnInit();
       localStorage.setItem('access_token', res.token);
       console.log(localStorage.getItem('access_token'),"test");
-      this.router.navigateByUrl("/dashboard");
+      console.log(res.user);
+      if(res.user.Role==3){
+        this.router.navigateByUrl("/tables-grp");
+      }
+      else if(res.user.Role==2){
+        this.router.navigateByUrl("/module");
+
+      }
+     else{ this.router.navigateByUrl("/dashboard");}
       this.toastrService.success("Bienvenue");
 
     }, (err) => {

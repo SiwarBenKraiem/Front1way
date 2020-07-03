@@ -38,9 +38,9 @@ export class NavbarComponent implements OnInit {
    {
      this.US.Deconnexion().subscribe(res=>{
 
-      localStorage.removeItem("token");
+      localStorage.removeItem("access_token");
       this.router.navigateByUrl("/login");
-      this.toastrService.success("Au revoir!");
+      this.toastrService.success("Au revoir");
   },
   err=>{
     this.toastrService.error(err.error.message);

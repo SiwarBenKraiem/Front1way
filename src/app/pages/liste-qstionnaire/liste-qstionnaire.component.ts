@@ -12,12 +12,15 @@ import { DialogQuestionnaireComponent } from 'src/app/dialog-questionnaire/dialo
 })
 export class ListeQstionnaireComponent implements OnInit {
 liste:any[];
-  constructor(@Inject(MAT_DIALOG_DATA) public data:any,public dialog:MatDialog,private qs:QuestionnaireService,private toastrService:ToastrService) { }
+  constructor(
+   // @Inject(MAT_DIALOG_DATA) public data:any,public dialog:MatDialog,
+    private qs:QuestionnaireService,private toastrService:ToastrService) { }
 
   ngOnInit(){
     this.lister();
   }
   lister(){
+    console.log("tesst");
     this.qs.listerQST().subscribe((res)=>{console.log("yaaaaay"+res);
     this.liste=res;
     },(err)=>{console.log(err+"nayyyyy");
@@ -52,14 +55,14 @@ else
 }
 deleteG(list:any)
   {
-    return this.dialog.open(DialogQuestionnaireComponent,{data:{list:list}});
-    /*let index=this.liste.indexOf(list)
+    //return this.dialog.open(DialogQuestionnaireComponent,{data:{list:list}});
+    let index=this.liste.indexOf(list)
     this.qs.delete(list.title).subscribe((res)=>{console.log(res);
     this.liste.splice(index,1);
     this.toastrService.success("","Questionnaire supprimé");
    
     },(err)=>{console.log(err);
-    })*/
+    })
   }
 
 }

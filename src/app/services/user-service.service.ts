@@ -14,7 +14,7 @@ export class UserServiceService {
     return this.http.get(this.apiprefix+"listeUser");
   }
   addUser(user){
-    return this.http.post(this.apiprefix+"add",user);
+    return this.http.post(this.apiprefix+"Ajout",user);
   }
   deleteUser(user)
   {
@@ -49,7 +49,7 @@ export class UserServiceService {
   {
     const httpOptions = {
       headers: new HttpHeaders({
-        
+        'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem("access_token")
       })
 
@@ -63,11 +63,25 @@ export class UserServiceService {
       
    
   }
-  changer(user){
-    return this.http.post<any>(this.apiprefix+"forgot",user);
+  changer(data){
+    return this.http.post<any>(this.apiprefix+"forgot",data);
+  }
+  updateMdp(user){
+    return this.http.post<any>(this.apiprefix+"changepassword",user);
   }
   consulter(id){
     return this.http.get<any>(this.apiprefix+"Consulter",id);
+  }
+  isLoggedIn() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem("access_token")
+      })
+
+    };
+    return this.http.post<any>(this.apiprefix +"isconnected",httpOptions);
+   // return !!localStorage.getItem('token');
   }
   
 

@@ -11,7 +11,7 @@ export class QuestionService {
   apiprefix="/api/";
 
   add(qst){
-    return this.http.post(this.apiprefix+"storeQuestion",qst);
+    return this.http.post(this.apiprefix+"store",qst);
   }
   Lister():Observable<any>{
     return this.http.get(this.apiprefix+"listqst");

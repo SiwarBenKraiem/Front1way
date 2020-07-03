@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { SujetService } from 'src/app/services/sujet.service';
 import { ModuleService } from 'src/app/services/module.service';
 import { fileURLToPath } from 'url';
+import { SessionService } from 'src/app/services/session.service';
 /*import { module } from 'src/app/modules/module';*/
 
 
@@ -22,7 +23,8 @@ export class MapsComponent implements OnInit {
  
   private readonly newProperty = null;
 
-  constructor(private fb:FormBuilder,private router:Router,private toastrService:ToastrService,private S_service: SujetService) { 
+  constructor(private fb:FormBuilder,private router:Router,private toastrService:ToastrService,
+    private S_service: SujetService, private session_service:SessionService) { 
     this.addSujetform=fb.group({
       sujet: new FormControl('',Validators.required),
       
@@ -57,6 +59,13 @@ export class MapsComponent implements OnInit {
     }
   )
 
+  }
+  lister(){
+    /*let id= ;
+    this.session_service.listeformation(id).subscribe(res=>{
+      console.log("tessssssssst");
+    }
+      )*/
   }
   //selectedFile='';
   /*onSelectedFile(event) {

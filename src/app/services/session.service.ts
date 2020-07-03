@@ -35,4 +35,8 @@ export class SessionService {
           {
           return this.http.get(this.apiprefix+"listegrpnonvide");
           }
+
+      listeformation(id){
+        return this.http.get(this.apiprefix+"listerformation",id);
+      }
   }

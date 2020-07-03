@@ -11,7 +11,7 @@ import { ModuleService } from 'src/app/services/module.service';
   styleUrls: ['./divcontenu.component.css']
 })
 export class DivcontenuComponent implements OnInit {
-  itle = 'resumeMultipleUpload';
+  /*itle = 'resumeMultipleUpload';
   selectedFiles = [];
   div:FormGroup;
   index;
@@ -33,10 +33,10 @@ export class DivcontenuComponent implements OnInit {
      })
  }
 
- selectedValue:any;
+ selectedValue:any;*/
   ngOnInit(): void {
-    this.selectedValue={};
-  }
+    //this.selectedValue={};
+  }/*
 
   edit()
   {
@@ -86,6 +86,6 @@ listec:Array<{nom_content:string,type_content:string,contenu:string}>;
   {
     console.log("eejkl");
     
-  }
+  }*/
  
 }

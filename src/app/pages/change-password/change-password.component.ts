@@ -12,20 +12,37 @@ import { ToastrService } from 'ngx-toastr';
 export class ChangePasswordComponent implements OnInit {
   changermdpform:FormGroup;
   
-  constructor(private fb:FormBuilder,private userService:UserServiceService,private router:Router,private toastrService:ToastrService, private route:ActivatedRoute) { 
+  constructor(private fb:FormBuilder,private userService:UserServiceService,private router:Router,private toastrService:ToastrService, private route:ActivatedRoute)
+   { 
     this.changermdpform=fb.group({
       email:new FormControl('',Validators.required),
       password: new FormControl('',Validators.required),
-      new_password: new FormControl('',Validators.required),
+      password_confirmation: new FormControl('',Validators.required),
+      resetToken:null
   });
-  
+  route.queryParams.subscribe(params => {
+    this.changermdpform.patchValue({
+      resetToken:params['token']
+   
+  });
+  this.changermdpform.get('resetToken').updateValueAndValidity();
+ 
+  });
 }
+  
+
+
+
 
 ngOnInit() {
+ 
+
 }
   changermdp(){
-    let user=this.changermdpform.value;
-    this.userService.changer(user).subscribe((res)=>{
+
+    let data=this.changermdpform.value;
+   
+    this.userService.changer(data).subscribe((res)=>{
     
     
     
@@ -38,3 +55,4 @@ ngOnInit() {
   }
 
   }
+
