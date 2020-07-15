@@ -18,10 +18,10 @@ export class MapsComponent implements OnInit {
 
   addSujetform:FormGroup;
   addModule:FormGroup;
-  selectedFile: File;
+  
+  sessions = [];
   /*module :module;*/
- 
-  private readonly newProperty = null;
+
 
   constructor(private fb:FormBuilder,private router:Router,private toastrService:ToastrService,
     private S_service: SujetService, private session_service:SessionService) { 
@@ -42,7 +42,31 @@ export class MapsComponent implements OnInit {
   
   ngOnInit() {
     
+    let token = localStorage.getItem("access_token");
+    console.dir(token);
+    //console.log(localStorage.getItem("access_token"));
+   this.session_service.listeusersession(token).subscribe((res) =>{
+       
+      console.log("tesst");
+
+         //this.sessions= res;
+    }, (err) => {
+      this.toastrService.error(err.error.message);
+      console.log(err);
+    });
+   
+    
+    
     }
+  
+
+    afficher(){
+      
+ 
+
+    }
+
+    
 
     addSujet()   
   {

@@ -15,37 +15,37 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Nom formation</th>
-                <th scope="col">Description</th>
+                <th scope="col">nom_session</th>
+                <!--<th scope="col">duree</th>-->
                 
                
                
               </tr>
             </thead>
             <tbody>
-              <tr  [routerLink]="['/stepper']" >
+              <tr  *ngFor="let session of sessions">
                
                
                 <td > 
                   <span class="badge badge-dot mr-4">
                     <i class="bg-warning" ></i>
                      <!--{{list.nom}}-->
-                     formation 1
+                     {{ session.nom_session }}
                   </span>
                  
                 </td>
                 
 
                
-                <td > 
+                <!-- <td > 
                   <span class="badge badge-dot mr-4">
                     <i class="bg-warning" ></i>
-                   <!-- {{list.description}}-->
-                   test
+                   <!-- {{list.description}} 
+                   session.duree
                      
                   </span>
                  
-                </td>
+                </td>-->
 
                
                

@@ -39,4 +39,7 @@ export class SessionService {
       listeformation(id){
         return this.http.get(this.apiprefix+"listerformation",id);
       }
+      listeusersession(id){
+        return this.http.get<any>(this.apiprefix+"listeusersession",id);
+      }
   }

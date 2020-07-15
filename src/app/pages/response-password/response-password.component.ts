@@ -24,8 +24,10 @@ export class ResponsePasswordComponent implements OnInit {
   ngOnInit(): void {
   }
   changer(){
-    let user=this.changerform.value;
-    console.log("tesst");
+
+    let user=localStorage.getItem("access_token");
+    //this.changerform.value;
+    console.log(localStorage.getItem("access_token"));
    
     this.userService.updateMdp(user).subscribe((res)=>{
     

@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ChangePasswordComponent implements OnInit {
   changermdpform:FormGroup;
+  btndisabled=false;
   
   constructor(private fb:FormBuilder,private userService:UserServiceService,private router:Router,private toastrService:ToastrService, private route:ActivatedRoute)
    { 
@@ -40,6 +41,8 @@ ngOnInit() {
 }
   changermdp(){
 
+    console.log("tests");
+    this.btndisabled=true;
     let data=this.changermdpform.value;
    
     this.userService.changer(data).subscribe((res)=>{
@@ -47,6 +50,7 @@ ngOnInit() {
     
     
       this.toastrService.success("mdp modifie");
+      this.router.navigateByUrl("/dashboard");
 
     }, (err) => {
       this.toastrService.error(err.error.message);

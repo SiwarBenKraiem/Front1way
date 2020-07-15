@@ -11,7 +11,7 @@ import { ModuleService } from 'src/app/services/module.service';
   styleUrls: ['./divcontenu.component.css']
 })
 export class DivcontenuComponent implements OnInit {
-  /*itle = 'resumeMultipleUpload';
+  itle = 'resumeMultipleUpload';
   selectedFiles = [];
   div:FormGroup;
   index;
@@ -33,14 +33,19 @@ export class DivcontenuComponent implements OnInit {
      })
  }
 
- selectedValue:any;*/
+ selectedValue:any;
   ngOnInit(): void {
-    //this.selectedValue={};
-  }/*
+    this.selectedValue={};
+  }
 
   edit()
   {
     
+  }
+  
+  selectedFile;
+  onSelectedFile(event) {
+    this.selectedFile = event.target.files[0];
   }
 
   onchange(){
@@ -48,13 +53,13 @@ export class DivcontenuComponent implements OnInit {
     
     this.selectedValue.nom_content=this.div.value.nom_content;
     this.selectedValue.type_content=this.div.value.type_content;
-    this.selectedValue.conten=this.div.get("conten").value;
+    this.selectedValue.conten=this.selectedFile;
     console.dir(this.div.get("conten").value);
     console.dir(this.selectedValue);
     console.log(this.selectedValue.conten);
     
    
-        let disabled=!(this.selectedValue.conten && this.selectedValue.nom_content && this.selectedValue.type_content);
+    let disabled=!(this.selectedValue.conten && this.selectedValue.nom_content && this.selectedValue.type_content);
     console.log(disabled);
     
     this.modulesService.changeDisable(disabled);
@@ -86,6 +91,6 @@ listec:Array<{nom_content:string,type_content:string,contenu:string}>;
   {
     console.log("eejkl");
     
-  }*/
+  }
  
 }

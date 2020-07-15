@@ -34,6 +34,8 @@ import { OptionComponent } from 'src/app/pages/option/option.component';
 import { ListeQstionnaireComponent } from 'src/app/pages/liste-qstionnaire/liste-qstionnaire.component';
 import { FormationComponent } from 'src/app/pages/formation/formation.component';
 import { DialogQuestionnaireComponent } from 'src/app/dialog-questionnaire/dialog-questionnaire.component';
+import { ModuleComponent } from 'src/app/pages/module/module.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @NgModule({
@@ -48,6 +50,7 @@ import { DialogQuestionnaireComponent } from 'src/app/dialog-questionnaire/dialo
     ReactiveFormsModule,
     DragDropModule,
     MatDialogModule,
+    EditorModule ,
     
     ToastrModule.forRoot(
       {timeOut: 10000,
@@ -72,7 +75,9 @@ import { DialogQuestionnaireComponent } from 'src/app/dialog-questionnaire/dialo
     QuestionnaireComponent,
     OptionComponent,
     ListeQstionnaireComponent,
-    FormationComponent
+    FormationComponent,
+    ModuleComponent,
+    DivcontenuComponent,
     
   ]
 })

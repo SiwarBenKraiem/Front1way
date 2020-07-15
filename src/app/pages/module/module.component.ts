@@ -2,7 +2,6 @@ import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver } from '@
 import { DivcontenuComponent } from '../divcontenu/divcontenu.component';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { createComponent } from '@angular/compiler/src/core';
-
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { element } from 'protractor';
@@ -134,21 +133,22 @@ valuee()
           {
             if(this.modulesService.tab.length>0)
            {
-             this.modulesService.tab.forEach(element => {
-            element.nom_module=data;
-              console.log(data+"data");
-           console.dir(element);
-           console.log(this.modulesService.tab);
+            const formData = new FormData();
+            formData.append("nom_module",data);
+            for(let i=0;i<this.modulesService.tab.length;i++){ 
+                let element =this.modulesService.tab[i];
+                formData.append("contenu"+i,element['conten']);
+                formData.append("nom_contenu"+i,element['nom_content']);
+                formData.append("id_type"+i,element['type_content']);
+            }
+            formData.append("length",""+this.modulesService.tab.length);
            
            
-           return this.modulesService.addContent(element).toPromise().then(res=>{console.log(res,"con");
-           this.toastrService.success("","Module et contenu ajouté");
-           this.router.navigateByUrl("/liste-formation");
+            return this.modulesService.addContent(formData).toPromise().then(res=>{console.log(res,"con");
+            this.toastrService.success("","Module et contenu ajouté");
+            this.router.navigateByUrl("/liste-formation");
            
-          }),(err)=>console.log(err+"erreur");
-           
-           
-        })
+            }),(err)=>console.log(err+"erreur");
       }
         if(this.modulesService.tab.length==0)
         {

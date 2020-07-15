@@ -12,7 +12,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-//import{QuillModule}from 'ngx-quill';
+
 import{UserServiceService}from './services/user-service.service';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -37,7 +37,7 @@ import { ResponsePasswordComponent } from './pages/response-password/response-pa
 import { SteperComponent } from './steper/steper.component';
 //import { CKEditorModule } from 'ckeditor4-angular';
 
-import {A11yModule} from '@angular/cdk/a11y';
+/*import {A11yModule} from '@angular/cdk/a11y';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {PortalModule} from '@angular/cdk/portal';
@@ -52,9 +52,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatChipsModule} from '@angular/material/chips';
+import {MatChipsModule} from '@angular/material/chips';*/
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+/*import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -78,7 +78,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatTreeModule} from '@angular/material/tree';
+import {MatTreeModule} from '@angular/material/tree';*/
 import { PdfViewerModule  } from 'ng2-pdf-viewer' ;
 
 
@@ -92,7 +92,7 @@ import { PdfViewerModule  } from 'ng2-pdf-viewer' ;
 @NgModule({
   imports: [
    
-    A11yModule,
+   /* A11yModule,
     ClipboardModule,
     CdkStepperModule,
     CdkTableModule,
@@ -105,9 +105,9 @@ import { PdfViewerModule  } from 'ng2-pdf-viewer' ;
     MatButtonToggleModule,
     MatCardModule,
     MatCheckboxModule,
-    MatChipsModule,
+    MatChipsModule,*/
     MatStepperModule,
-    MatDatepickerModule,
+    /*MatDatepickerModule,
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
@@ -134,7 +134,7 @@ import { PdfViewerModule  } from 'ng2-pdf-viewer' ;
     MatTooltipModule,
     MatTreeModule,
     PortalModule,
-    ScrollingModule,
+    ScrollingModule,*/
     BrowserModule,
      ReactiveFormsModule,
      FormsModule,
@@ -152,7 +152,7 @@ import { PdfViewerModule  } from 'ng2-pdf-viewer' ;
      PdfViewerModule,
 
      
-      //QuillModule,
+     // QuillModule,
     
     
      ToastrModule.forRoot(

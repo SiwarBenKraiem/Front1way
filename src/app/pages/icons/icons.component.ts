@@ -1,11 +1,13 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditorModule } from 'ckeditor4-angular';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { SujetService } from 'src/app/services/sujet.service';
 import { QuestionService } from 'src/app/services/question.service';
+
+
 
 //import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
@@ -19,7 +21,7 @@ import { QuestionService } from 'src/app/services/question.service';
 
 export class IconsComponent implements OnInit {
   addQST:FormGroup;
-listeSujet:any[];
+rows:FormArray;
 
 
    
@@ -36,6 +38,8 @@ constructor(private fb:FormBuilder,private router:Router,private toastrService:T
       /*choice4: new FormControl('',Validators.required),*/
     })
 
+    this.rows = this.fb.array([]);
+
    }
      
   
@@ -44,18 +48,6 @@ constructor(private fb:FormBuilder,private router:Router,private toastrService:T
 
   ngOnInit() {
 
-    /*adddiv(){
-      console.log("tesst")
-     '<div class="input-group mb-3">'+
-             
-             '<div class="input-group-prepend">'+
-               '<div class="input-group-text">'+
-                  '<input type="checkbox" aria-label="Checkbox for following text input" formControlName="txt" >'+
-                '</div>'+
-              '</div>'+
-              '<input type="text" class="form-control" aria-label="Text input with checkbox">'+
-           ' </div>';
-    }*/
     
   }
   Add(){
@@ -75,12 +67,18 @@ constructor(private fb:FormBuilder,private router:Router,private toastrService:T
   }
  
 
-addid(){
-		if(document.getElementById('id1').style.display == 'none'){
-    	document.getElementById('id1').style.display = 'block';
-  		}
+addrow(){
+  this.rows.push(this.createItemFormGroup());
   	
 }
+createItemFormGroup():FormGroup {
+  return this.fb.group({
+    txt: null,
+    
+  });
+
+}
+  
 
 /*input(){
   var $Increment=0;

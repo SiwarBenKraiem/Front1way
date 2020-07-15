@@ -12,6 +12,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class ResetPasswordComponent implements OnInit {
 
   ResetGrp:FormGroup;
+  btndisabled=false;
  
   constructor(private fb:FormBuilder,private router:Router,private toastrService:ToastrService, private us:UserServiceService) {
     this.ResetGrp=fb.group({
@@ -23,6 +24,7 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit(){
   }
 reset(){
+  this.btndisabled=true;
 
     let user=this.ResetGrp.value;
    this.us.forgot(user).subscribe((res)=>{
